@@ -1,4 +1,7 @@
 import express from 'express';
+import "reflect-metadata";
+
+import "./database";
 
 const app = express();
 
@@ -10,15 +13,18 @@ const app = express();
  * PATCH => Alterar uma informação específica
  */
 
-
-app.get("/test", (request, response) => {
-    // Request => Entrando
-    // Response => Saindo
-    return response.send("Hello, friend")
-});
-
-app.post("/test-post", (request, response) => {
-    return response.send("Hello world")
-})
+/**
+ * Tipos de parâmetros
+ * Routes Params => http:/localhost:3000/produtos/423423423
+ * Query Parmas => http://localhost:3000/produtos?name=teclado&description=tecladobom
+ * 
+ * Body Params => {
+ *  "name": "teclado",
+ * "description": "teclado bom"
+ * 
+ * }
+ */
 
 app.listen(3000, () => console.log("Server is running..."))
+
+//50:18 - Entidades
