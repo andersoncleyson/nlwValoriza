@@ -31,9 +31,13 @@ class AuthenticateUserService {
         }
         // Gerar token
 
-        const token = sign({
-            email: user.email
-        }, "55bb064c61400e79e2c3a42328f62ff3", {
+        const token = sign(
+            {
+            email: user.email,
+
+        }, 
+        "55bb064c61400e79e2c3a42328f62ff3", 
+        {
             subject: user.id,
             expiresIn: "1d"
         });
